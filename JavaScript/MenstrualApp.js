@@ -6,18 +6,10 @@ console.log("...calculate your monthly flow.");
 
 let periodInput = prompt("\nEnter the start date of your last period (YYYY-MM-DD): ");
 
-       try {
-            periodDate = LocalDate.parse(periodInput);
-        } catch (DateTimeParseException e) {
-           console.log("Invalid date format. Please use YYYY-MM-DD.");
-            return;
-        }
-
 let cycleLength = prompt("Enter your average cycle length in days (21–35): ");
 
 if (cycleLength < 21 || cycleLength > 35) {
-	System.out.println("Cycle length must be between 21 and 35 days.");
-	return;
+console.log("Cycle length must be between 21 and 35 days.");
 }
 
 LocalDate nextPeriod = periodDate.plusDays(cycleLength);

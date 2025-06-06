@@ -1,48 +1,40 @@
 import java.util.Scanner;
 import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 
 public class MenstrualApp {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+	public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
 
-        System.out.println("MENSTRUAL CYCLE APP");
-        System.out.println("...calculate your monthly flow.");
+	System.out.println("MENSTRUAL CYCLE APP");
+	System.out.println("...calculate your monthly flow.");
 
-        System.out.print("\nEnter the start date of your last period (YYYY-MM-DD): ");
-        String periodInput = input.next();
+	System.out.print("\nEnter the start date of your last period (YYYY-MM-DD): ");
+	String periodInput = input.next();
 
-        LocalDate periodDate;
+	LocalDate periodDate = LocalDate.parse(periodInput);
 
-        try {
-            periodDate = LocalDate.parse(periodInput);
-        } catch (DateTimeParseException e) {
-            System.out.println("Invalid date format. Please use YYYY-MM-DD.");
-            return;
-        }
+	System.out.print("Enter your average cycle length in days (21 - 35): ");
+	int cycleLength = input.nextInt();
 
-        System.out.print("Enter your average cycle length in days (21–35): ");
-        int cycleLength = input.nextInt();
+	if (cycleLength < 21 || cycleLength > 35) {
+	System.out.println("Cycle length must be between 21 and 35 days.");
+	return;
+}
 
-        if (cycleLength < 21 || cycleLength > 35) {
-            System.out.println("Cycle length must be between 21 and 35 days.");
-            return;
-        }
+	LocalDate nextPeriod = periodDate.plusDays(cycleLength);
+	LocalDate ovulationDate = nextPeriod.minusDays(14);
 
-        LocalDate nextPeriod = periodDate.plusDays(cycleLength);
+	LocalDate fertileStart = ovulationDate.minusDays(3);
+	LocalDate fertileEnd = ovulationDate.plusDays(2);
 
-        int ovulationDay = cycleLength / 2;
-        LocalDate ovulationDate = periodDate.plusDays(ovulationDay);
+	System.out.println("\nMenstrual Cycle Prediction:");
+	System.out.println("Next period expected on: " + nextPeriod);
+	System.out.println("Estimated ovulation date: " + ovulationDate);
 
-        LocalDate fertileStart = ovulationDate.minusDays(3);
-        LocalDate fertileEnd = ovulationDate.plusDays(2);
+	System.out.println("\nFertile window: " + fertileStart + " to " + fertileEnd);
+	System.out.println("Relatively safe days (lower pregnancy risk):");
 
-        System.out.println("\nMenstrual Cycle Prediction:");
-        System.out.println("Next period expected on: " + nextPeriod);
-        System.out.println("Estimated ovulation date: " + ovulationDate);
-        System.out.println("Fertile window: " + fertileStart + " to " + fertileEnd);
-        System.out.println("Relatively safe days (lower pregnancy risk):");
-        System.out.println("- Before fertile window: " + periodDate + " to " + fertileStart.minusDays(1));
-        System.out.println("- After fertile window: " + fertileEnd.plusDays(1) + " to " + nextPeriod);
-    }
+	System.out.println("\n- Before fertile window: " + periodDate + " to " + fertileStart.minusDays(1));
+	System.out.println("- After fertile window: " + fertileEnd.plusDays(1) + " to " + nextPeriod);
+}
 }

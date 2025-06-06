@@ -1,3 +1,5 @@
+# Menstrual app tracker
+
 from datetime import datetime, timedelta, date
 
 print("MENSTRUAL CYCLE APP")
@@ -11,7 +13,7 @@ period_date = datetime.strptime(period_input, "%Y-%m-%d").date()
 cycle_length = int(input("Enter your average cycle length in days (21–35): "))
 
 def calculate_cycle(period_start: date, cycle_length: int):
-	if not (21 <= cycle_length <= 35):
+	if (cycle_length < 21 or cycle_length > 35):
 		print("Cycle length must be between 21 and 35 days.")
 
 	next_period = period_start + timedelta(days=cycle_length)

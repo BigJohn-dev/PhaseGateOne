@@ -6,7 +6,7 @@ class TestMenstrualApp(unittest.TestCase):
 
 	def test_that_menstrual_app_exist(self):
 		result = calculate_cycle(date(2025, 6, 1), 28)
-		self.assertIn("next_period", result)  # basic key presence check
+		self.assertIn("next_period", result) 
 
 	def test_normal_cycle(self):
 		start = date(2025, 6, 1)
