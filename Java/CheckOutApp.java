@@ -5,7 +5,7 @@ public class CheckOutApp {
 	Scanner input = new Scanner(System.in);
 
 	System.out.println("What is the customer's Name?");
-	String customerName = input.next();
+	String customerName = input.nextLine();
 
 	String choice = "yes";
 	do {
