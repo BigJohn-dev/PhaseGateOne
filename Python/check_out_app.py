@@ -9,22 +9,22 @@ class CheckOutAppFunctions:
 		print(f"Cashier: {cashier}")
 		print(f"Customer Name: {customer}")
 		print("=" * 60)
-		print("ITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)")
+		print("\t\tITEM\tQUANTITY\tPRICE\tTOTAL(NGN)")
 		print("-" * 60)
 
 		total = quantity * price
-		print(f"{item}\t\t{quantity}\t\t{price}\t{total:.2f}")
+		print(f"\t\t{item}\t{quantity}\t\t{price}\t{total:.2f}")
 		print("-" * 60)
 
 		discount_amt = total * (discount / 100)
 		vat = total * 0.175
 		bill_total = total - discount_amt + vat
 
-		print(f"\nSub Total: \t\t\t{total:.2f}")
-		print(f"Discount: \t\t\t{discount_amt:.2f}")
-		print(f"VAT @ 17.50%: \t\t\t{vat:.2f}")
+		print(f"\n\t\t\tSub Total: \t\t{total:.2f}")
+		print(f"\t\t\tDiscount: \t\t{discount_amt:.2f}")
+		print(f"\t\t\tVAT @ 17.50%: \t\t{vat:.2f}")
 		print("=" * 60)
-		print(f"Bill Total: \t\t\t{bill_total:.2f}")
+		print(f"\t\t\tBill Total: \t\t{bill_total:.2f}")
 		print("=" * 60)
 		print(f"THIS IS NOT A RECEIPT. KINDLY PAY {bill_total:.2f}")
 		print("=" * 60)
@@ -33,11 +33,11 @@ class CheckOutAppFunctions:
 		print(f"Cashier: {cashier}")
 		print(f"Customer Name: {customer}")
 		print("=" * 60)
-		print("ITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)")
+		print("\t\tITEM\tQUANTITY\tPRICE\tTOTAL(NGN)")
 		print("-" * 60)
 
 		total = quantity * price
-		print(f"{item}\t\t{quantity}\t\t{price}\t{total:.2f}")
+		print(f"\t\t{item}\t{quantity}\t\t{price}\t{total:.2f}")
 		print("-" * 60)
 
 		discount_amt = total * (discount / 100)
@@ -45,15 +45,15 @@ class CheckOutAppFunctions:
 		bill_total = total - discount_amt + vat
 		balance = payment - bill_total
 
-		print(f"\nSub Total: \t\t\t{total:.2f}")
-		print(f"Discount: \t\t\t{discount_amt:.2f}")
-		print(f"VAT @ 17.50%: \t\t\t{vat:.2f}")
+		print(f"\n\t\t\tSub Total: \t\t{total:.2f}")
+		print(f"\t\t\tDiscount: \t\t{discount_amt:.2f}")
+		print(f"\t\t\tVAT @ 17.50%: \t\t{vat:.2f}")
 		print("=" * 60)
-		print(f"Bill Total: \t\t\t{bill_total:.2f}")
-		print(f"Amount Paid: \t\t\t{payment:.2f}")
-		print(f"Balance: \t\t\t{balance:.2f}")
+		print(f"\t\t\tBill Total: \t\t{bill_total:.2f}")
+		print(f"\t\t\tAmount Paid: \t\t{payment:.2f}")
+		print(f"\t\t\tBalance: \t\t{balance:.2f}")
 		print("=" * 60)
-		print("THANK YOU FOR YOUR PATRONAGE")
+		print("\t\tTHANK YOU FOR YOUR PATRONAGE")
 		print("=" * 60)
 
 
@@ -71,20 +71,27 @@ def main():
 		item_bought = input("What did the customer buy? ")
 
 		price_per_unit = float(input("How much per unit? "))
+		if price_per_unit <= 0:
+			print("Invalid price input")
+			continue
+
 		quantity = int(input("How many units? "))
-        
+		if quantity <= 0:
+			print("Invalid number of units.")
+			continue
+
 		item_name = item_bought
 		total_price = price_per_unit
 		total_qty = quantity
 
-		choice = input("Add more items? ").strip().lower()
+		choice = input("Add more items? (yes or no) ").strip().lower()
 
 		while choice not in ["yes", "no"]:
 			choice = input("Add more items? ").strip().lower()
 
-	cashier_name = input("What is your Name? ")
-	discount = float(input("How much discount will customer get? "))
+	cashier_name = input("What is your Name? (Cashier name) ")
 
+	discount = float(input("How much discount will customer get? "))
 	if discount < 0 or discount > 100:
 		print("Discount must be between 0 and 100!")
 
