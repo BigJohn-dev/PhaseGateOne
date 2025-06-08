@@ -26,9 +26,13 @@ public class CheckOutApp {
 	System.out.println("How much discount will customer get?");
 	double discount = input.nextDouble();
 
+	if (discount < 0 || discount > 100) {
+	System.out.println("Discount must be between 0 and 100!");
+	continue;
+} else {
 	System.out.println("How much did the customer give to you?");
 	double payment = input.nextDouble();
- 
+}
 }
 
 }
