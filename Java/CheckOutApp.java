@@ -8,7 +8,7 @@ public class CheckOutApp {
 	String customerName = input.nextLine();
 
 	String itemBought;
-	double pricePerUnit;
+	double price = 0.0;
 	String cashierName;
 	double discount = 0.0;
 	double payment;
@@ -20,7 +20,8 @@ public class CheckOutApp {
 		itemBought = input.next();
     
 		System.out.print("How much per unit? ");
-		pricePerUnit = input.nextDouble();
+		double pricePerUnit = input.nextDouble();
+		price += pricePerUnit;
 		if (pricePerUnit <= 0) {
 		System.out.println("Enter a valid price");
 		continue;
@@ -29,9 +30,7 @@ public class CheckOutApp {
 		choice = input.next();
 		if (!choice.equalsIgnoreCase("yes") && !choice.equalsIgnoreCase("no")) {
 		System.out.println("Please enter yes or no.");
-} else { 
-		quantities += 1; 
-}
+} 
 } 	while (!choice.equalsIgnoreCase("no"));
 
 		System.out.println("What is your Name?");
@@ -43,14 +42,14 @@ public class CheckOutApp {
 		System.out.println("Discount must be between 0 and 100!");
 }
 		System.out.println(CheckOutAppFunctions.getStoreDetails());
-		CheckOutAppFunctions.printCustomerInvoice(itemBought, quantities, pricePerUnit, customerName, cashierName, discount);
+		CheckOutAppFunctions.printCustomerInvoice(itemBought, quantities, price, customerName, cashierName, discount);
 
-		System.out.println("\nHow much did the customer give to you?");
+		System.out.println("\n\nHow much did the customer give to you?");
 		payment = input.nextDouble();
 		if (payment <= 0) {
 		System.out.println("Invalid or negative payment!");
 }
 		System.out.println(CheckOutAppFunctions.getStoreDetails());
-		CheckOutAppFunctions.printCustomerReceipt(itemBought, quantities, pricePerUnit, customerName, cashierName, discount, payment);
+		CheckOutAppFunctions.printCustomerReceipt(itemBought, quantities, price, customerName, cashierName, discount, payment);
 }
 }
