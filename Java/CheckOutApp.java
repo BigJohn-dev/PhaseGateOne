@@ -4,11 +4,13 @@ public class CheckOutApp {
 	public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
 
-	System.out.println("What is the customer's Name?");
+	System.out.println("\nWELCOME TO SEMICOLON STORE..");
+
+	System.out.println("\nWhat is the customer's Name?");
 	String customerName = input.nextLine();
 
 	String itemBought;
-	double price = 0.0;
+	double pricePerUnit;
 	String cashierName;
 	double discount = 0.0;
 	double payment;
@@ -16,16 +18,24 @@ public class CheckOutApp {
 	String choice = "yes";
 
 	do {
-		System.out.print("What did the customer buy? ");
+		System.out.print("\nWhat did the customer buy? ");
 		itemBought = input.next();
     
-		System.out.print("How much per unit? ");
-		double pricePerUnit = input.nextDouble();
-		price += pricePerUnit;
+		System.out.print("\nHow much per unit? ");
+		pricePerUnit = input.nextDouble();
+
 		if (pricePerUnit <= 0) {
 		System.out.println("Enter a valid price");
 		continue;
 }
+		System.out.print("\nHow many unit? ");
+		quantities = input.nextInt();
+		quantities += 1;
+		if (quantities <= 0) {
+		System.out.println("Invalid number of units!");
+		continue;
+}
+		
 		System.out.println("Add more items?");
 		choice = input.next();
 		if (!choice.equalsIgnoreCase("yes") && !choice.equalsIgnoreCase("no")) {
@@ -42,7 +52,7 @@ public class CheckOutApp {
 		System.out.println("Discount must be between 0 and 100!");
 }
 		System.out.println(CheckOutAppFunctions.getStoreDetails());
-		CheckOutAppFunctions.printCustomerInvoice(itemBought, quantities, price, customerName, cashierName, discount);
+		CheckOutAppFunctions.printCustomerInvoice(itemBought, quantities, pricePerUnit, customerName, cashierName, discount);
 
 		System.out.println("\n\nHow much did the customer give to you?");
 		payment = input.nextDouble();
@@ -50,6 +60,6 @@ public class CheckOutApp {
 		System.out.println("Invalid or negative payment!");
 }
 		System.out.println(CheckOutAppFunctions.getStoreDetails());
-		CheckOutAppFunctions.printCustomerReceipt(itemBought, quantities, price, customerName, cashierName, discount, payment);
+		CheckOutAppFunctions.printCustomerReceipt(itemBought, quantities, pricePerUnit, customerName, cashierName, discount, payment);
 }
 }

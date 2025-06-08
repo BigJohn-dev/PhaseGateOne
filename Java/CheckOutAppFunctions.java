@@ -16,12 +16,12 @@ public class CheckOutAppFunctions {
 	for (int line = 1; line <= 60; line++) {
 	System.out.print("=");
 }
-        System.out.println("\t\t\nITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)");
+        System.out.println("\n\t\tITEM\tQUANTITY\tPRICE\tTOTAL(NGN)");
         for (int dash = 1; dash <= 60; dash++) {
 	System.out.print("-");
 }
         double total = prices * quantities;
-        System.out.println("\n" + items + "\t\t" + quantities + "\t" + prices + "\t" + total);
+        System.out.println("\n\t\t" + items + "\t" + quantities + "\t\t" + prices + "\t" + total);
 
         for (int dash2 = 1; dash2 <= 60; dash2++) {
             System.out.print("-");
@@ -31,14 +31,14 @@ public class CheckOutAppFunctions {
         double VAT = total * (17.50 / 100);
         double billTotal = VAT + total - discountAmount;
 
-        System.out.println("\nSub Total: " + total);
-        System.out.println("Discount: " + discountAmount);
-        System.out.println("VAT @ 17.50%: " + VAT);
+        System.out.println("\n\t\t\tSub Total: \t\t" + total);
+        System.out.println("\t\t\tDiscount: \t\t" + discountAmount);
+        System.out.println("\t\t\tVAT @ 17.50%: \t\t" + VAT);
 
         for (int line2 = 1; line2 <= 60; line2++) {
             System.out.print("=");
 }
-        System.out.println("\nBill Total: " + billTotal);
+        System.out.println("\n\t\t\tBill Total: \t\t" + billTotal);
 
         for (int line2 = 1; line2 <= 60; line2++) {
             System.out.print("=");
@@ -57,12 +57,12 @@ public class CheckOutAppFunctions {
         for (int line = 1; line <= 60; line++) {
             System.out.print("=");
 }
-        System.out.println("\nITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)");
+        System.out.println("\n\t\tITEM\tQUANTITY\tPRICE\tTOTAL(NGN)");
         for (int dash = 1; dash <= 60; dash++) {
             System.out.print("-");
 }
         double total = prices * quantities;
-        System.out.println("\n" + items + "\t\t" + quantities + "\t" + prices + "\t" + total);
+        System.out.println("\n\t\t" + items + "\t" + quantities + "\t\t" + prices + "\t" + total);
 
         for (int dash2 = 1; dash2 <= 60; dash2++) {
             System.out.print("-");
@@ -73,21 +73,21 @@ public class CheckOutAppFunctions {
         double billTotal = VAT + total - discountAmount;
         double balance = payment - billTotal;
 
-        System.out.println("\nSub Total: " + total);
-        System.out.println("Discount: " + discountAmount);
-        System.out.println("VAT @ 17.50%: " + VAT);
+        System.out.println("\n\t\t\tSub Total: \t\t" + total);
+        System.out.println("\t\t\tDiscount: \t\t" + discountAmount);
+        System.out.println("\t\t\tVAT @ 17.50%: \t\t" + VAT);
 
         for (int line2 = 1; line2 <= 60; line2++) {
             System.out.print("=");
 }
-        System.out.println("\nBill Total: " + billTotal);
-        System.out.println("Amount paid: " + payment);
-        System.out.println("Balance: " + balance);
+        System.out.println("\n\t\t\tBill Total: \t\t" + billTotal);
+        System.out.println("\t\t\tAmount paid: \t\t" + payment);
+        System.out.println("\t\t\tBalance: \t\t" + balance);
 
         for (int line2 = 1; line2 <= 60; line2++) {
             System.out.print("=");
 }
-        System.out.println("\nTHANK YOU FOR YOUR PATRONAGE");
+        System.out.println("\n\t\tTHANK YOU FOR YOUR PATRONAGE");
 
         for (int line2 = 1; line2 <= 60; line2++) {
             System.out.print("=");
