@@ -1,105 +1,96 @@
 import java.util.Date;
 
 public class CheckOutAppFunctions {
-
 	public void storeDetails() {
-
 	System.out.println("SEMICOLON STORES\nMAIN BRANCH\nLOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS. \nTEL: 03938373320");
-
 	Date dateNow = new Date();
 	System.out.println(dateNow);
 }
-
-	public static String getStoreDetails(){
-	 return "SEMICOLON STORES\nMAIN BRANCH\nLOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.\nTEL: 03938373320\n" + new Date();
+	public static String getStoreDetails() {
+	return "\nSEMICOLON STORES\nMAIN BRANCH\nLOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.\nTEL: 03938373320\n" + new Date();
 }
-
-	public static String printCustomerInvoice(String items, String quantities, double prices, String CustomerName, String cashierName, double discount) {
-
+	public static void printCustomerInvoice(String items, int quantities, double prices, String CustomerName, String cashierName, double discount) {
 	System.out.println("Cashier: " + cashierName);
 	System.out.println("Customer Name: " + CustomerName);
-
-	for (int line = 1; line <= 60; line++){
-	System.out.print("=");
-}
-	System.out.println("\nITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)");
-	for (int dash = 1; dash <= 60; dash++) {
-	System.out.print("-");
-}
-	double total = prices * quantities;
-	System.out.println(items + "\t\t" + quantities + "\t" + prices + "\t" + total);
-
-	for (int dash2 = 1; dash2 <= 60; dash2++) {
-	System.out.print("-");
-}
-	double discountAmount = total * (discount / 100);
-	double finalAmount = total - discountAmount;
-	double VAT = total * (17.50 / 100);
-	double billTotal = VAT + total - discountAmount;
-
-	System.out.println("Sub Total: " + total);
-	System.out.println("Discount: " + discountAmount);
-	System.out.println("VAT @ 17.50%: " + VAT);
-
-	for (int line2 = 1; line2 <= 60; line2++){
-	System.out.print("=");
-}
-	System.out.println("Bill Total: " + billTotal);
-
-	for (int line2 = 1; line2 <= 60; line2++){
-	System.out.print("=");
-}
-	System.out.println("THIS IS NOT A RECEIPT KINDLY PAY " + billTotal);
-
-	for (int line2 = 1; line2 <= 60; line2++){
-	System.out.print("=");
-}
-}
-
-	public static  String printCustomerReciept(String items, String quantities, double prices, String CustomerName, String cashierName, double discount, double payment) {
-
-	System.out.println("Cashier: " + cashierName);
-	System.out.println("Customer Name: " + CustomerName);
-
-	for (int line = 1; line <= 60; line++){
-	System.out.print("=");
-}
-	System.out.println("\nITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)");
-	for (int dash = 1; dash <= 60; dash++) {
-	System.out.print("-");
-}
 	
-	double total = prices * quantities;
-	System.out.println(items + "\t\t" + quantities + "\t" + prices + "\t" + total);
+	for (int line = 1; line <= 60; line++) {
+	System.out.print("=");
 }
-	for (int dash2 = 1; dash2 <= 60; dash2++) {
+        System.out.println("\t\t\nITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)");
+        for (int dash = 1; dash <= 60; dash++) {
 	System.out.print("-");
 }
-	double discountAmount = total * (discount / 100);
-	double finalAmount = total - discountAmount;
-	double VAT = total * (17.50 / 100);
-	double billTotal = VAT + total - discountAmount;
-	double balance = payment - billTotal;
+        double total = prices * quantities;
+        System.out.println("\n" + items + "\t\t" + quantities + "\t" + prices + "\t" + total);
 
-	System.out.println("Sub Total: " + total);
-	System.out.println("Discount: " + discountAmount);
-	System.out.println("VAT @ 17.50%: " + VAT);
-
-	for (int line2 = 1; line2 <= 60; line2++){
-	System.out.print("=");
+        for (int dash2 = 1; dash2 <= 60; dash2++) {
+            System.out.print("-");
 }
-	System.out.println("Bill Total: " + billTotal);
-	System.out.println("Amount paid: " + payment);
-	System.out.println("Balance: " + balance);
+        double discountAmount = total * (discount / 100);
+        double finalAmount = total - discountAmount;
+        double VAT = total * (17.50 / 100);
+        double billTotal = VAT + total - discountAmount;
 
-	for (int line2 = 1; line2 <= 60; line2++){
-	System.out.print("=");
-}
-	System.out.println("THANK YOU FOR YOUR PATRONAGE");
+        System.out.println("\nSub Total: " + total);
+        System.out.println("Discount: " + discountAmount);
+        System.out.println("VAT @ 17.50%: " + VAT);
 
-	for (int line2 = 1; line2 <= 60; line2++){
-	System.out.print("=");
+        for (int line2 = 1; line2 <= 60; line2++) {
+            System.out.print("=");
+}
+        System.out.println("\nBill Total: " + billTotal);
+
+        for (int line2 = 1; line2 <= 60; line2++) {
+            System.out.print("=");
+}
+        System.out.println("\nTHIS IS NOT A RECEIPT KINDLY PAY " + billTotal);
+
+        for (int line2 = 1; line2 <= 60; line2++) {
+            System.out.print("=");
 }
 }
 
+    public static void printCustomerReceipt(String items, int quantities, double prices, String CustomerName, String cashierName, double discount, double payment) {
+        System.out.println("Cashier: " + cashierName);
+        System.out.println("Customer Name: " + CustomerName);
+
+        for (int line = 1; line <= 60; line++) {
+            System.out.print("=");
+}
+        System.out.println("\nITEM\t\tQUANTITY\tPRICE\tTOTAL(NGN)");
+        for (int dash = 1; dash <= 60; dash++) {
+            System.out.print("-");
+}
+        double total = prices * quantities;
+        System.out.println("\n" + items + "\t\t" + quantities + "\t" + prices + "\t" + total);
+
+        for (int dash2 = 1; dash2 <= 60; dash2++) {
+            System.out.print("-");
+}
+        double discountAmount = total * (discount / 100);
+        double finalAmount = total - discountAmount;
+        double VAT = total * (17.50 / 100);
+        double billTotal = VAT + total - discountAmount;
+        double balance = payment - billTotal;
+
+        System.out.println("\nSub Total: " + total);
+        System.out.println("Discount: " + discountAmount);
+        System.out.println("VAT @ 17.50%: " + VAT);
+
+        for (int line2 = 1; line2 <= 60; line2++) {
+            System.out.print("=");
+}
+        System.out.println("\nBill Total: " + billTotal);
+        System.out.println("Amount paid: " + payment);
+        System.out.println("Balance: " + balance);
+
+        for (int line2 = 1; line2 <= 60; line2++) {
+            System.out.print("=");
+}
+        System.out.println("\nTHANK YOU FOR YOUR PATRONAGE");
+
+        for (int line2 = 1; line2 <= 60; line2++) {
+            System.out.print("=");
+}
+}
 }
