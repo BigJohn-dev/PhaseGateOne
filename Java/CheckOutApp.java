@@ -9,11 +9,11 @@ public class CheckOutApp {
 	System.out.println("\nWhat is the customer's Name?");
 	String customerName = input.nextLine();
 
-	String itemBought;
-	double pricePerUnit;
-	String cashierName;
+	String itemBought = " ";
+	double pricePerUnit = 0.0;
+	String cashierName = " ";
 	double discount = 0.0;
-	double payment;
+	double payment = 0.0; 
 	int quantities = 0;
 	String choice = "yes";
 
@@ -30,13 +30,12 @@ public class CheckOutApp {
 }
 		System.out.print("\nHow many unit? ");
 		quantities = input.nextInt();
-		quantities += 1;
 		if (quantities <= 0) {
 		System.out.println("Invalid number of units!");
 		continue;
 }
 		
-		System.out.println("Add more items?");
+		System.out.println("Add more items? (yes or no)");
 		choice = input.next();
 		if (!choice.equalsIgnoreCase("yes") && !choice.equalsIgnoreCase("no")) {
 		System.out.println("Please enter yes or no.");

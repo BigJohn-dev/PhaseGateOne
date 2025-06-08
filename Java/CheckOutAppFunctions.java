@@ -20,16 +20,15 @@ public class CheckOutAppFunctions {
         for (int dash = 1; dash <= 60; dash++) {
 	System.out.print("-");
 }
-        double total = prices * quantities;
+	double total = prices * quantities;
         System.out.println("\n\t\t" + items + "\t" + quantities + "\t\t" + prices + "\t" + total);
 
         for (int dash2 = 1; dash2 <= 60; dash2++) {
             System.out.print("-");
 }
         double discountAmount = total * (discount / 100);
-        double finalAmount = total - discountAmount;
-        double VAT = total * (17.50 / 100);
-        double billTotal = VAT + total - discountAmount;
+	double VAT = total * 0.175;
+	double billTotal = total + VAT - discountAmount;
 
         System.out.println("\n\t\t\tSub Total: \t\t" + total);
         System.out.println("\t\t\tDiscount: \t\t" + discountAmount);
@@ -67,10 +66,9 @@ public class CheckOutAppFunctions {
         for (int dash2 = 1; dash2 <= 60; dash2++) {
             System.out.print("-");
 }
-        double discountAmount = total * (discount / 100);
-        double finalAmount = total - discountAmount;
-        double VAT = total * (17.50 / 100);
-        double billTotal = VAT + total - discountAmount;
+	double discountAmount = total * (discount / 100);
+	double VAT = total * 0.175;
+	double billTotal = total + VAT - discountAmount;
         double balance = payment - billTotal;
 
         System.out.println("\n\t\t\tSub Total: \t\t" + total);
