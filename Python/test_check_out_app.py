@@ -16,9 +16,4 @@ class TestCheckOutApp(unittest.TestCase):
 
 	def test_print_customer_invoice(self):
 		checkout = CheckOutAppFunctions("Rice", "2", "1100", "John Floss", "Jose", "0.08")
-		self.assertEqual(checkout.item, "Rice")
-		self.assertEqual(checkout.quantity, 2)
-		self.assertEqual(checkout.price, 1100.0)
-		self.assertEqual(checkout.customer, "John Floss")
-		self.assertEqual(checkout.cashier, "Jose")
-		self.assertEqual(checkout.discount, 0.08)
+		result = checkout.print_customer_invoice

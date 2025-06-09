@@ -1,6 +1,7 @@
 import java.util.Date;
 
 public class CheckOutAppFunctions {
+
 	public void storeDetails() {
 	System.out.println("SEMICOLON STORES\nMAIN BRANCH\nLOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS. \nTEL: 03938373320");
 	Date dateNow = new Date();
