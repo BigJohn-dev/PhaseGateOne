@@ -1,3 +1,6 @@
+// Atm card Validator
+const prompt = require("prompt-sync")();
+
 const ATM_Card = {
 
 	visa(card_number) {
@@ -68,12 +71,9 @@ const ATM_Card = {
 }
 };
 
-const Visa_card = [4, 9, 0, 7, 2, 0, 9, 4, 7, 0, 9, 4, 2, 0, 9, 3];
-const Master_card = [5, 9, 0, 7, 2, 0, 9, 4, 7, 0, 9, 4, 2, 0, 9, 3];
-const Discover_card = [6, 7, 8, 4, 6, 2, 4, 8, 2, 4, 6, 2, 4, 2, 9, 4];
-const American_express_card = [3, 9, 0, 7, 2, 0, 9, 4, 7, 0, 9, 4, 2, 0, 9];
+let userInput = prompt("Enter card number: ")
 
-console.log(ATM_Card.visa(Visa_card));
-console.log(ATM_Card.masterCard(Master_card));
-console.log(ATM_Card.discover(Discover_card));
-console.log(ATM_Card.americanExpress(American_express_card));
+console.log(ATM_Card.visa(userInput));
+console.log(ATM_Card.masterCard(userInput));
+console.log(ATM_Card.discover(userInput));
+console.log(ATM_Card.americanExpress(userInput));
