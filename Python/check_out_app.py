@@ -101,7 +101,7 @@ def main():
 		while choice not in ["yes", "no"]:
 			choice = input("Add more items? ").lower()
 
-	cashier_name = input("What is your Name? (Cashier name) ")
+	cashier_name = input("Enter cashier's name: ")
 
 	discount = float(input("How much discount will customer get? "))
 	if discount < 0 or discount > 100:
