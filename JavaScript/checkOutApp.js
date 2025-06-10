@@ -25,11 +25,11 @@ function printCustomerInvoice(items, customer, cashier, discount) {
 	let vat = total * 0.175;
 	let billTotal = total - discountAmount + vat;
 
-	console.log("\t\t\tSub Total:\t\tN" + total.toFixed(2));
-	console.log("\t\t\tDiscount:\t\tN" + discountAmount.toFixed(2));
-	console.log("\t\t\tVAT @ 17.50%:\t\tN" + vat.toFixed(2));
+	console.log("\t\t\tSub Total:\t\t" + total.toFixed(2));
+	console.log("\t\t\tDiscount:\t\t" + discountAmount.toFixed(2));
+	console.log("\t\t\tVAT @ 17.50%:\t\t" + vat.toFixed(2));
 	console.log("=".repeat(60));
-	console.log("\t\t\tBill Total:\t\tN" + billTotal.toFixed(2));
+	console.log("\t\t\tBill Total:\t\t" + billTotal.toFixed(2));
 	console.log("=".repeat(60));
 	console.log("THIS IS NOT A RECEIPT. KINDLY PAY N" + billTotal.toFixed(2));
 	console.log("=".repeat(60));
@@ -58,13 +58,16 @@ function printCustomerReceipt(items, customer, cashier, discount, payment) {
 	let billTotal = total - discountAmount + vat;
 	let balance = payment - billTotal;
 
-	console.log("\t\t\tSub Total:\t\tN" + total.toFixed(2));
-	console.log("\t\t\tDiscount:\t\tN" + discountAmount.toFixed(2));
-	console.log("\t\t\tVAT @ 17.50%:\t\tN" + vat.toFixed(2));
+	console.log("\t\t\tSub Total:\t\t" + total.toFixed(2));
+	console.log("\t\t\tDiscount:\t\t" + discountAmount.toFixed(2));
+	console.log("\t\t\tVAT @ 17.50%:\t\t" + vat.toFixed(2));
 	console.log("=".repeat(60));
-	console.log("\t\t\tBill Total:\t\tN" + billTotal.toFixed(2));
-	console.log("\t\t\tAmount Paid:\t\tN" + payment.toFixed(2));
-	console.log("\t\t\tBalance:\t\tN" + balance.toFixed(2));
+	console.log("\t\t\tBill Total:\t\t" + billTotal.toFixed(2));
+	console.log("\t\t\tAmount Paid:\t\t" + payment.toFixed(2));
+	console.log("\t\t\tBalance:\t\t" + balance.toFixed(2));
+	if (balance < 0) {
+	console.log("\n\t" + customer + ", please pay your balance of N" + Math.abs(balance));
+}
 	console.log("=".repeat(60));
 	console.log("\t\tTHANK YOU FOR YOUR PATRONAGE");
 	console.log("=".repeat(60));
