@@ -13,9 +13,6 @@ public class StudentGrade {
         System.out.println("Enter number of subjects: ");
         int numSubjects = input.nextInt();
 
-	System.out.println("Saving >>>>>>>>>>>>>");
-	System.out.println("Saved successfully");
-
         int[][] scores = new int[numStudents][numSubjects];
 
 	for (int count = 0; count < numStudents; count++) {
@@ -25,9 +22,7 @@ public class StudentGrade {
                 	System.out.println("Enter score for Subject " + (counter + 1) + ": ");
                     int score = input.nextInt();
                     if (score >= 0 && score <= 100) {
-                        scores[i][j] = score;
-			System.out.println("Saving >>>>>>>>>>>>>");
-			System.out.println("Saved successfully");
+                        scores[count][counter] = score;
                         break;
 } else {
 		System.out.println("Invalid score. Please enter a valid score between 0 and 100.");
@@ -35,7 +30,7 @@ public class StudentGrade {
 }
 }
 }        
-	System.out.println(StudentGradeFunction.printSummary(numStudents, numSubjects, score));
+	StudentGradeFunction.printSummary(scores);
 
 
 
