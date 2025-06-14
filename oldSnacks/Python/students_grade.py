@@ -25,7 +25,7 @@ class grade_function:
 			positions[i] = first
 
 		print("=" * 60)
-		print("STUDENT\t" + "\t".join([f"SUB{n+1}" for n in range(num_subjects)]) + "\tTOTAL\tAVERAGE\tPOSITION")
+		print("STUDENT\tSUBJECT1\tSUBJECT2\tSUBJECT3\tTOTAL\tAVERAGE\tPOSITION")
 		print("=" * 60)
 
 		for i in range(num_students):

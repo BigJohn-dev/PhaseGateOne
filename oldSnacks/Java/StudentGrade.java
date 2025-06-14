@@ -31,8 +31,7 @@ public class StudentGrade {
 }
 }        
 	StudentGradeFunction.printSummary(scores);
-
-
+	StudentGradeFunction.printSubjectSummary(scores);
 
 }
 }
