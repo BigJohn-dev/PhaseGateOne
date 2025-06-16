@@ -98,16 +98,7 @@ public class StudentGradeFunction {
 	System.out.println("Number of passes: " + pass);
 	System.out.println("Number of fails: " + fail);
 }
-
-
 }
-
-
-
-
-
-
-
-
+}
 
 }

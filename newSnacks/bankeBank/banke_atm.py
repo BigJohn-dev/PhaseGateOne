@@ -57,7 +57,7 @@ class atm_main:
 		sender = self.accounts[sender_id]
 		receiver = self.accounts[receiver_id]
 		if sender.pin != pin:
-			return "\nInvalid PIN"
+			return "\nInvalid pin"
 		if amount > sender.balance:
 			return "\nInsufficient funds"
 		sender.balance -= amount

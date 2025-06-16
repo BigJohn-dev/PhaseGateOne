@@ -4,12 +4,14 @@ public class AtmFunctions {
 	private String lastName;
 	private String pin;
 	private double balance;
+	private String accounts = {};
 
-	public AtmFunctions(String firstName, String lastName, String pin, double balance) {
+	public AtmFunctions(String firstName, String lastName, String pin, double balance, String accounts) {
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.pin = pin;
 	this.balance = balance;
+	this.accounts = accounts;
 }
 
 	public String deposit(double amount) {
@@ -33,9 +35,9 @@ public class AtmFunctions {
 }
 }
 
-	public String checkBalance(String inputPin) {
-	if (!this.pin.equals(inputPin)) {
-		return "Invalid PIN";
+	public String checkBalance(String pin) {
+	if (!this.pin.equals(pin)) {
+		return "Invalid pin";
 }
 	return "Your balance is $" + String.format("%.2f", this.balance);
 }
@@ -48,28 +50,51 @@ public class AtmFunctions {
 	return "PIN changed successfully";
 }
 
-	public static AtmFunctions createAccount(String firstName, String lastName, String pin) {
-        String accountId = firstName + "_" + lastName;
-        AtmFunctions account = new AtmFunctions(firstName, lastName, pin, 0.0);
-        accounts.put(accountId, account);
-        return account;
+	public static String createAccount(String firstName, String lastName, String pin) {
+        String accountId = firstName.toUpperCase() + "_" + lastName.toUpperCase();
+		if (this.accounts.equals(accountId)) {
+			return "Account already exist";
+} else {
+        accounts.append(accountId, pin, balance);
+        return accounts;
+}
 }
 	public static String closeAccount(String firstName, String lastName, String pin) {
-        String accountId = firstName + "_" + lastName;
-        AtmFunctions acc = accounts.get(accountId);
-        if (acc != null && acc.validatePin(pin)) {
+        String accountId = firstName.toUpperCase() + "_" + lastName.toUpperCase();
+        if (accountId != null && pin == this.pin) {
             accounts.remove(accountId);
             return "Account closed successfully.";
 }
         return "Account not found or invalid pin.";
 }
-	 public static AtmFunctions getAccount(String firstName, String lastName, String pin) {
-        String accountId = firstName + lastName;
-        AtmFunctions acc = accounts.get(accountId);
-        if (acc != null && acc.validatePin(pin)) {
+
+	 public static String getAccount(String firstName, String lastName, String pin) {
+        String accountId = firstName.toUpperCase() + "_" + lastName.toUpperCase();
+        if (accountId != null && pin == this.pin) {
             return acc;
 }
         return null;
 }
+
+	public static String transfer(String senderID, String receiverID, double amount, String pin) {
+	if (!senderID != this.accounts || !receiverID != this.accounts) {
+	return "\nOne or both accounts do not exist";
+} else {
+	String sender = this.account[senderID];
+	String sender = this.account[receiverID];
+}
+	if (sender.pin != pin) return "\nInvalid pin";
+
+	if (amount > sender.balance) {
+		return "\nInsufficient funds";
+} else {
+	sender.balance -= amount;
+	reciever.balance += amount;
+	return "\nTransferred $" + amount + "from " + senderID + "to " + receiverID;
+}
+	
+}
+
+
 
 }
