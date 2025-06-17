@@ -5,7 +5,7 @@ class phone_book:
 	def __init__(self):
 		self.contacts = []
 
-	def add_contact(first_name, last_name, phone_number):
+	def add_contact(self, first_name, last_name, phone_number):
 		if first_name and last_name and phone_number == " ":
 			return "No contact added."
 		if first_name and last_name and phone_number not in self.contacts:
@@ -14,13 +14,13 @@ class phone_book:
 
 		return "Contact already exists"
 
-	def remove_contact(index):
+	def remove_contact(self, index):
 		if 1 <= index <= len(self.contacts):
 			removed_contact = self.contacts.pop(index - 1)
 			return f"Contact '{removed_contact['first_name, last_name, phone_number']}' deleted"
 		return "Invalid contact number"
 
-	def find_contact_by_phone_number(phone_number):
+	def find_contact_by_phone_number(self, phone_number):
 		if phone_number not in self.contacts:
 			return "Contact not found"
 		result = "From your contact list:\n"
@@ -29,7 +29,7 @@ class phone_book:
 			result += f"{i}. {contacts['phone_number']} - {status}\n"
 		return result
 
-	def find_contact_by_first_name(first_name):
+	def find_contact_by_first_name(self, first_name):
 		if first_name not in self.contacts:
 			return "Contact not found"
 		result = "From your contact list:\n"
@@ -38,7 +38,7 @@ class phone_book:
 			result += f"{i}. {contacts['first_name']} - {status}\n"
 		return result
 
-	def find_contact_by_last_name(last_name):
+	def find_contact_by_last_name(self, last_name):
 		if last_name not in self.contacts:
 			return "Contact not found"
 		result = "From your contact list:\n"
@@ -47,7 +47,7 @@ class phone_book:
 			result += f"{i}. {contacts['last_name']} - {status}\n"
 		return result
 
-	def  edit_contact(first_name, last_name,  new_number):
+	def  edit_contact(self, first_name, last_name,  new_number):
 		if self.first_name  != first_name and self.last_name != last_name:
 			return "\nFirst name or Last Name is incorrect"
 		self.new_number = new_number
