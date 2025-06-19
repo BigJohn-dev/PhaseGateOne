@@ -2,18 +2,19 @@ public class PhoneBookFunctions {
 
         String firstName, lastName, phoneNumber;
 
-        public Contact(String firstName, String lastName, String phoneNumber) {
+        public PhoneBookFunctions(String firstName, String lastName, String phoneNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 }
-	String[] contacts = new Contact[10];
-	public static Contact[] getContacts() {
+	 static String[] contacts = new String[10];
+	public static String[] getContacts() {
+	String[] displayContacts = new String[contacts.length];
 	for(int i = 0; i < contacts.length; i++) {
-	result[i] = contacts[i];
-	System.out.println(result[i]);
+	displayContacts[i] = contacts[i];
+	System.out.println(displayContacts[i]);
 }
-	return result;	
+	return displayContacts;	
 }
 
 
@@ -45,14 +46,14 @@ public class PhoneBookFunctions {
 	return "Contact does not exist";
 }
 }
-	public static String findContactByLastName(lastName){
+	public static String findContactByLastName(String lastName){
 	if (lastName.equals(contacts.lastName)) {
 	contacts.getContact();
 } else {
 	return "Contact does not exist";
 }
 }
-	public static String edit_contact(String firstName, String lastName, String phoneNumber){
+	public static String editContact(String firstName, String lastName, String phoneNumber){
 	if (firstName.equals(contacts.firstName) && lastName.equals(contacts.lastName) && phoneNumber.equals(contacts.phoneNumber)) {
 		String contact = contacts.getContact();
 		if (contact.equals(contacts.contacts)) contacts.append(firstName, lastName, phoneNumber);
