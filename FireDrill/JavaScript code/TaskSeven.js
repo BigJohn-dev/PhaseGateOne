@@ -9,6 +9,3 @@
 	console.log(sum + " ");
 }
 }
-
-}
-}

@@ -1,4 +1,4 @@
-public class TaskSeven {
+public class TaskNine {
 	public static void main(String[] args) {
 
 	int total = 0;
@@ -11,6 +11,6 @@ public class TaskSeven {
 	total += sum;
 }
 }
-	System.out.print(total + " ");
+	System.out.print(total * total + " ");
 }
 }

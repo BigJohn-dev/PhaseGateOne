@@ -1,4 +1,4 @@
-// TaskEight
+// TaskNine
 
 let total = 0;
 for(let number = 1; number <= 10; number++) {
@@ -10,4 +10,4 @@ for(let number = 1; number <= 10; number++) {
 	total += sum;
 }
 }
-console.log(total);
+console.log(total * total);

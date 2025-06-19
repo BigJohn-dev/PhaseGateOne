@@ -4,7 +4,7 @@ public class AtmFunctions {
 	private String lastName;
 	private String pin;
 	private double balance;
-	private String accounts = {};
+	private String[] accounts = {};
 
 	public AtmFunctions(String firstName, String lastName, String pin, double balance, String accounts) {
 	this.firstName = firstName;
